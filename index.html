@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookSummary</title>
+    <script src="https://cdn.tailwindcss.com/3.4.4?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,line-clamp@0.4.4,container-queries@0.1.1"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.1.2/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+
+  <body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-blue-800 fixed top-0 w-full shadow-md z-10">
+      <div class="container mx-auto flex justify-between items-center p-4">
+        <a class="text-xl font-bold text-white" href="#">BookSummary</a>
+        <button class="text-white lg:hidden" id="navbar-toggler">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+        <div class="hidden lg:flex space-x-4" id="navbar-menu">
+          <a class="text-white hover:text-white" href="#">Home</a>
+          <a class="text-white hover:text-white" href="#">Features</a>
+          <a class="text-white hover:text-white" href="#">Pricing</a>
+          <a class="text-white hover:text-white" href="#">Contact</a>
+        </div>
+      </div>
+      <div
+        class="lg:hidden hidden flex flex-col space-y-2 p-4"
+        id="mobile-menu"
+      >
+        <a class="text-white hover:text-white" href="#">Home</a>
+        <a class="text-white hover:text-white" href="#">Features</a>
+        <a class="text-white hover:text-white" href="#">Pricing</a>
+        <a class="text-white hover:text-white" href="#">Contact</a>
+      </div>
+    </nav>
+
+    <!-- Header -->
+    <header
+      class="bg-gradient-to-r from-blue-900 via-blue-600 to-blue-400 text-white py-24 text-center"
+    >
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4">
+          Discover Your Next Great Book
+        </h1>
+        <p class="text-lg sm:text-xl mb-6">
+          Find summaries and reviews of your favorite books in one place.
+        </p>
+        <a
+          class="bg-white text-blue-800 py-2 px-4 rounded-lg hover:bg-gray-100"
+          href="#"
+          >Get Started</a
+        >
+      </div>
+    </header>
+
+    <!-- Features -->
+    <section class="py-12">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-2xl sm:text-3xl font-bold text-center mb-8 text-blue-800"
+        >
+          Our Features
+        </h2>
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8">
+            <div
+              class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <img
+                src="https://media.istockphoto.com/id/133313561/photo/book-and-glass-loupe.jpg?s=612x612&w=0&k=20&c=c_-XUrih631ObxQA5ODY5mql_1PqEgfpQJXbG-qODPY="
+                alt="In-depth Summaries"
+                class="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <h4 class="text-xl font-bold mb-2 text-blue-800">
+                In-depth Summaries
+              </h4>
+              <p class="text-gray-700">
+                Detailed summaries of popular books to help you decide your next
+                read.
+              </p>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8">
+            <div
+              class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <img
+                src="https://media.istockphoto.com/id/478582836/photo/chat-symbol-above-vintage-old-book-on-blackboard-background.jpg?s=612x612&w=0&k=20&c=v7MUYL0L4GCOIPZkwzcX_0hUCTNApYi0g5rn7UkdSPo="
+                alt="Expert Reviews"
+                class="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <h4 class="text-xl font-bold mb-2 text-blue-800">
+                Expert Reviews
+              </h4>
+              <p class="text-gray-700">
+                Reviews from experts and book enthusiasts to give you a deeper
+                insight.
+              </p>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8">
+            <div
+              class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1512820790803-83ca734da794"
+                alt="Reading Lists"
+                class="w-full h-48 object-cover rounded-lg mb-4"
+              />
+              <h4 class="text-xl font-bold mb-2 text-blue-800">
+                Reading Lists
+              </h4>
+              <p class="text-gray-700">
+                Curated reading lists to help you discover new genres and
+                authors.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="py-12 bg-blue-100">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-2xl sm:text-3xl font-bold text-center mb-8 text-blue-800"
+        >
+          Statistics
+        </h2>
+        <div
+          class="flex flex-wrap -mx-4 justify-center text-lg sm:text-lg text-blue-800 font-bold"
+        >
+          <div class="w-full sm:w-1/2 lg:w-1/5 px-4 mb-8">
+            <div class="text-center">
+              <i class="fas fa-smile-beam text-3xl text-blue-800"></i>
+              <div class="number-count text-blue-800 mt-2" data-count="231">
+                0
+              </div>
+              <p class="text-blue-700 mt-2">Happy Users</p>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 lg:w-1/5 px-4 mb-8">
+            <div class="text-center">
+              <i class="fas fa-check-circle text-3xl text-blue-800"></i>
+              <div class="number-count text-blue-800 mt-2" data-count="385">
+                0
+              </div>
+              <p class="text-blue-700 mt-2">Issues Solved</p>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 lg:w-1/5 px-4 mb-8">
+            <div class="text-center">
+              <i class="fas fa-star text-3xl text-blue-800"></i>
+              <div class="number-count text-blue-800 mt-2" data-count="159">
+                0
+              </div>
+              <p class="text-blue-700 mt-2">Good Reviews</p>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 lg:w-1/5 px-4 mb-8">
+            <div class="text-center">
+              <i class="fas fa-book text-3xl text-blue-800"></i>
+              <div class="number-count text-blue-800 mt-2" data-count="127">
+                0
+              </div>
+              <p class="text-blue-700 mt-2">Case Studies</p>
+            </div>
+          </div>
+          <div class="w-full sm:w-1/2 lg:w-1/5 px-4 mb-8">
+            <div class="text-center">
+              <i class="fas fa-cart-plus text-3xl text-blue-800"></i>
+              <div class="number-count text-blue-800 mt-2" data-count="211">
+                0
+              </div>
+              <p class="text-blue-700 mt-2">Orders Received</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-12 bg-gray-200">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-2xl sm:text-3xl font-bold text-center mb-8 text-blue-800"
+        >
+          Testimonials
+        </h2>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
+              <p class="text-gray-700 mb-4">
+                "BookSummary helped me find my next favorite book! The reviews
+                are insightful and the summaries are spot on."
+              </p>
+              <p class="text-blue-800 font-bold">- Jane Doe</p>
+            </div>
+            <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
+              <p class="text-gray-700 mb-4">
+                "I love the curated reading lists. They've introduced me to
+                genres I never thought I'd enjoy!"
+              </p>
+              <p class="text-blue-800 font-bold">- John Smith</p>
+            </div>
+            <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
+              <p class="text-gray-700 mb-4">
+                "The in-depth summaries are a game changer. I can decide on
+                books much faster now."
+              </p>
+              <p class="text-blue-800 font-bold">- Alice Brown</p>
+            </div>
+            <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
+              <p class="text-gray-700 mb-4">
+                "The expert reviews are so detailed and helpful. I've discovered
+                so many great reads thanks to BookSummary!"
+              </p>
+              <p class="text-blue-800 font-bold">- Michael Lee</p>
+            </div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-12 bg-gray-100">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-extrabold text-center mb-12 text-gray-900">
+          Pricing Plans
+        </h2>
+        <p class="text-center text-gray-600 mb-12">
+          Choose the plan that best fits your needs. Each plan is tailored to
+          provide the most value and comes with a 30-day money-back guarantee.
+        </p>
+        <div class="flex flex-wrap justify-center">
+          <!-- Basic Plan -->
+          <div class="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8">
+            <div
+              class="bg-white p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105 duration-300 ease-in-out"
+            >
+              <div class="flex justify-center mb-4">
+                <!-- Basic Plan Icon -->
+                <svg
+                  class="w-16 h-16 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M10 14l2-2m0 0l2 2m-2-2v9m-7-4v4m14-4v4m-7-7l2-2m0 0l2 2m-2-2v4"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-gray-900">
+                Basic Plan
+              </h3>
+              <p class="text-green-600 font-semibold mb-2">Free Basic</p>
+              <p class="text-3xl font-bold text-gray-900 mb-4">
+                $9.99<span class="text-base font-medium text-gray-600"
+                  >/month</span
+                >
+              </p>
+              <p class="text-gray-600 mb-4">
+                Ideal for individuals starting out. Access essential features
+                and a comprehensive library of book summaries with basic tools
+                and community support.
+              </p>
+              <ul class="list-none text-left text-gray-600 mb-4">
+                <li class="flex items-center mb-2">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Access to basic book summaries
+                </li>
+                <li class="flex items-center mb-2">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Monthly updates
+                </li>
+                <li class="flex items-center mb-2">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Community support
+                </li>
+                <li class="flex items-center mb-2">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Limited offline access
+                </li>
+              </ul>
+              <a
+                class="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300"
+                href="#"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+
+          <!-- Premium Plan -->
+          <div class="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8">
+            <div
+              class="bg-white p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105 duration-300 ease-in-out"
+            >
+              <div class="flex justify-center mb-4">
+                <!-- Premium Plan Icon -->
+                <svg
+                  class="w-16 h-16 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8h18M3 12h18m-6 4h6M3 16h6m-3-4v9m6-9v9m6-9v9m-3-4v4"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-gray-900">
+                Premium Plan
+              </h3>
+              <p class="text-green-600 font-semibold mb-2">Most Popular</p>
+              <p class="text-3xl font-bold text-gray-900 mb-4">
+                $19.99<span class="text-base font-medium text-gray-600"
+                  >/month</span
+                >
+              </p>
+              <p class="text-gray-600 mb-4">
+                Best for frequent readers and professionals. Includes everything
+                in the Basic Plan plus advanced tools, offline access, and
+                priority support.
+              </p>
+              <ul class="list-none text-left text-gray-600 mb-4">
+                <li class="flex items-center mb-2">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  All features in the Basic Plan
+                </li>
+                <li class="flex items-center mb-2">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Extended book summaries
+                </li>
+                <li class="flex items-center mb-2">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Offline access
+                </li>
+                <li class="flex items-center mb-2">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Priority customer support
+                </li>
+                <li class="flex items-center mb-2">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Advanced search tools
+                </li>
+              </ul>
+              <a
+                class="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300"
+                href="#"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+
+          <!-- Pro Plan -->
+          <div class="w-full sm:w-1/2 lg:w-1/3 px-4 mb-8">
+            <div
+              class="bg-white p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105 duration-300 ease-in-out"
+            >
+              <div class="flex justify-center mb-4">
+                <!-- Pro Plan Icon -->
+                <svg
+                  class="w-16 h-16 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 12l2-2m0 0l2 2m-2-2v12m0-12l-2 2m2-2h18m-6 4h6m-6-4l2-2m0 0l2 2m-2-2v9m-6-9v9m-6-9v9m6-4l-2-2m0 0l-2 2m2-2v9"
+                  ></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-semibold mb-2 text-gray-900">
+                Pro Plan
+              </h3>
+              <p class="text-green-600 font-semibold mb-2">For Teams</p>
+              <p class="text-3xl font-bold text-gray-900 mb-4">
+                $29.99<span class="text-base font-medium text-gray-600"
+                  >/month</span
+                >
+              </p>
+              <p class="text-gray-600 mb-4">
+                Designed for organizations and teams. Includes all Premium Plan
+                features plus team collaboration tools, custom content, and
+                advanced analytics.
+              </p>
+              <ul class="list-none text-left text-gray-600 mb-4">
+                <li class="flex items-center mb-2">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  All features in the Premium Plan
+                </li>
+                <li class="flex items-center mb-2">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Team collaboration tools
+                </li>
+                <li class="flex items-center mb-2">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Custom content requests
+                </li>
+                <li class="flex items-center mb-2">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Advanced analytics and reports
+                </li>
+                <li class="flex items-center mb-2">
+                  <svg
+                    class="w-5 h-5 text-green-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    ></path>
+                  </svg>
+                  Dedicated account manager
+                </li>
+              </ul>
+              <a
+                class="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300"
+                href="#"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-12 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-2xl sm:text-3xl font-bold text-center mb-8 text-blue-800"
+        >
+          Frequently Asked Questions
+        </h2>
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full md:w-1/2 px-4 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold mb-4 text-blue-800">
+                What is BookSummary?
+              </h3>
+              <p class="text-gray-700">
+                BookSummary is a platform that provides detailed summaries,
+                expert reviews, and curated reading lists to help you discover
+                your next great book.
+              </p>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 px-4 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold mb-4 text-blue-800">
+                How can I sign up?
+              </h3>
+              <p class="text-gray-700">
+                You can sign up by clicking on the "Sign Up" buttons located on
+                the Pricing section of our website. Choose a plan that suits you
+                and follow the prompts.
+              </p>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 px-4 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold mb-4 text-blue-800">
+                Can I cancel my subscription?
+              </h3>
+              <p class="text-gray-700">
+                Yes, you can cancel your subscription at any time through your
+                account settings. Please refer to our cancellation policy for
+                more details.
+              </p>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 px-4 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold mb-4 text-blue-800">
+                How often are new summaries added?
+              </h3>
+              <p class="text-gray-700">
+                We regularly update our platform with new summaries and reviews.
+                Our team is constantly working to provide you with fresh and
+                relevant content.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-12 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-2xl sm:text-3xl font-bold text-center mb-8 text-blue-900"
+        >
+          Contact Us
+        </h2>
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full md:w-1/2 px-4 mb-8">
+            <form class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold mb-4 text-blue-800">
+                Send us a Message
+              </h3>
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-medium mb-2">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  class="form-input w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                  placeholder="Your Name"
+                />
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-medium mb-2">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  class="form-input w-full p-3 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                  placeholder="Your Email"
+                />
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-medium mb-2">
+                  Message
+                </label>
+                <textarea
+                  class="form-textarea w-full p-3 border border-gray-300 rounded-lg resize-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
+                  rows="4"
+                  placeholder="Your Message"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="bg-blue-800 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition duration-300"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+          <div class="w-full md:w-1/2 px-4 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+              <h3 class="text-xl font-bold mb-4 text-blue-800">Get in Touch</h3>
+              <p class="text-gray-700 mb-4">
+                <i class="fas fa-map-marker-alt text-blue-800"></i> 123 Book St,
+                Bibliopolis, BK 45678
+              </p>
+              <p class="text-gray-700 mb-4">
+                <i class="fas fa-phone-alt text-blue-800"></i> (123) 456-7890
+              </p>
+              <p class="text-gray-700 mb-4">
+                <i class="fas fa-envelope text-blue-800"></i>
+                contact@booksummary.com
+              </p>
+              <p class="text-gray-700 mb-4">
+                <i class="fas fa-clock text-blue-800"></i> Mon-Fri: 9am - 6pm
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-800 text-white py-6">
+      <div class="container mx-auto px-4 text-center">
+        <p>&copy; 2024 BookSummary. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Back To Top Button -->
+    <a
+      href="#"
+      id="back-to-top"
+      class="fixed bottom-4 right-4 bg-blue-800 text-white py-2 px-4 rounded-lg hover:bg-blue-700"
+      >▲</a
+    >
+
+    <!-- Scripts -->
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.1.2/swiper-bundle.min.css"
+    />
+
+    <!-- Swiper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.1.2/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.1.2/swiper-bundle.min.js"></script>
+    <script>
+      // Initialize Swiper after DOM is fully loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        var swiper = new Swiper(".swiper-container", {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          breakpoints: {
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+          },
+        });
+      });
+
+      // Back To Top Button
+      document
+        .getElementById("back-to-top")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+      // Mobile menu toggle
+      document
+        .getElementById("navbar-toggler")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+
+      // Statistics counter
+      const counters = document.querySelectorAll(".number-count");
+      counters.forEach((counter) => {
+        const updateCount = () => {
+          const target = +counter.getAttribute("data-count");
+          const count = +counter.innerText;
+
+          const increment = target / 100;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 1);
+          } else {
+            counter.innerText = target;
+          }
+        };
+
+        updateCount();
+      });
+    </script>
+  </body>
+</html>
